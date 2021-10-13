@@ -1,0 +1,40 @@
+﻿@model IEnumerable<MeuSite.Models.Mapeamento.Categoria>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Listagem de Categorias de Produtos</h2>
+
+<p>
+    <a href="/Categoria/Create"><i class="far fa-plus-square" title="Novo Registro"></i> Novo Registro</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nome)
+    </td>
+    <td>
+        <a href="/Categoria/Edit/@item.ID"><i class="far fa-edit" title="Alterar"></i></a>
+        <a href="/Categoria/Details/@item.ID"><i class="far fa-file-alt" title="Informações"></i></a>
+        <a href="/Categoria/Delete/@item.ID" onclick="return confirm('Confirma a Exclusão?');"><i class="far fa-trash-alt" title="Apagar"></i></a>
+    </td>
+</tr>
+}
+
+</table>

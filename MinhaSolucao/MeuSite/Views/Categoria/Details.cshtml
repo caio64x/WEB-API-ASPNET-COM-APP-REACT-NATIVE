@@ -1,0 +1,29 @@
+﻿@model MeuSite.Models.Mapeamento.Categoria
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalhes da Categoria '@Model.Nome'</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID)
+            <br />
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+            <br />
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Alterar", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("<- Voltar para a Lista", "Index")
+</p>

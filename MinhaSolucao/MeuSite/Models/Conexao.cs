@@ -16,4 +16,4 @@ namespace MeuSite.Models
             conn = new SqlConnection(ConfigurationManager.AppSettings["stringbanco"]);
         }
     }
-}
+} 
